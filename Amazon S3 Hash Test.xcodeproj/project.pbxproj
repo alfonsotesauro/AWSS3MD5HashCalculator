@@ -1,0 +1,608 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D79E4E93225AB6F100255821 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79E4E92225AB6F100255821 /* AppDelegate.swift */; };
+		D79E4E95225AB6F100255821 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79E4E94225AB6F100255821 /* ViewController.swift */; };
+		D79E4E98225AB6F100255821 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D79E4E96225AB6F100255821 /* Main.storyboard */; };
+		D79E4E9B225AB6F100255821 /* Amazon_S3_Hash_Test.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D79E4E99225AB6F100255821 /* Amazon_S3_Hash_Test.xcdatamodeld */; };
+		D79E4E9D225AB6F200255821 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D79E4E9C225AB6F200255821 /* Assets.xcassets */; };
+		D79E4EA0225AB6F200255821 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D79E4E9E225AB6F200255821 /* LaunchScreen.storyboard */; };
+		D79E4EAB225AB6F200255821 /* Amazon_S3_Hash_TestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79E4EAA225AB6F200255821 /* Amazon_S3_Hash_TestTests.swift */; };
+		D79E4EB6225AB6F200255821 /* Amazon_S3_Hash_TestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79E4EB5225AB6F200255821 /* Amazon_S3_Hash_TestUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D79E4EA7225AB6F200255821 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D79E4E87225AB6F100255821 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D79E4E8E225AB6F100255821;
+			remoteInfo = "Amazon S3 Hash Test";
+		};
+		D79E4EB2225AB6F200255821 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D79E4E87225AB6F100255821 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D79E4E8E225AB6F100255821;
+			remoteInfo = "Amazon S3 Hash Test";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D79E4E8F225AB6F100255821 /* Amazon S3 Hash Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Amazon S3 Hash Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D79E4E92225AB6F100255821 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D79E4E94225AB6F100255821 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D79E4E97225AB6F100255821 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D79E4E9A225AB6F100255821 /* Amazon_S3_Hash_Test.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Amazon_S3_Hash_Test.xcdatamodel; sourceTree = "<group>"; };
+		D79E4E9C225AB6F200255821 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D79E4E9F225AB6F200255821 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D79E4EA1225AB6F200255821 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D79E4EA6225AB6F200255821 /* Amazon S3 Hash TestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Amazon S3 Hash TestTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D79E4EAA225AB6F200255821 /* Amazon_S3_Hash_TestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Amazon_S3_Hash_TestTests.swift; sourceTree = "<group>"; };
+		D79E4EAC225AB6F200255821 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D79E4EB1225AB6F200255821 /* Amazon S3 Hash TestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Amazon S3 Hash TestUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D79E4EB5225AB6F200255821 /* Amazon_S3_Hash_TestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Amazon_S3_Hash_TestUITests.swift; sourceTree = "<group>"; };
+		D79E4EB7225AB6F200255821 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D79E4E8C225AB6F100255821 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D79E4EA3225AB6F200255821 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D79E4EAE225AB6F200255821 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D79E4E86225AB6F100255821 = {
+			isa = PBXGroup;
+			children = (
+				D79E4E91225AB6F100255821 /* Amazon S3 Hash Test */,
+				D79E4EA9225AB6F200255821 /* Amazon S3 Hash TestTests */,
+				D79E4EB4225AB6F200255821 /* Amazon S3 Hash TestUITests */,
+				D79E4E90225AB6F100255821 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D79E4E90225AB6F100255821 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D79E4E8F225AB6F100255821 /* Amazon S3 Hash Test.app */,
+				D79E4EA6225AB6F200255821 /* Amazon S3 Hash TestTests.xctest */,
+				D79E4EB1225AB6F200255821 /* Amazon S3 Hash TestUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D79E4E91225AB6F100255821 /* Amazon S3 Hash Test */ = {
+			isa = PBXGroup;
+			children = (
+				D79E4E92225AB6F100255821 /* AppDelegate.swift */,
+				D79E4E94225AB6F100255821 /* ViewController.swift */,
+				D79E4E96225AB6F100255821 /* Main.storyboard */,
+				D79E4E9C225AB6F200255821 /* Assets.xcassets */,
+				D79E4E9E225AB6F200255821 /* LaunchScreen.storyboard */,
+				D79E4EA1225AB6F200255821 /* Info.plist */,
+				D79E4E99225AB6F100255821 /* Amazon_S3_Hash_Test.xcdatamodeld */,
+			);
+			path = "Amazon S3 Hash Test";
+			sourceTree = "<group>";
+		};
+		D79E4EA9225AB6F200255821 /* Amazon S3 Hash TestTests */ = {
+			isa = PBXGroup;
+			children = (
+				D79E4EAA225AB6F200255821 /* Amazon_S3_Hash_TestTests.swift */,
+				D79E4EAC225AB6F200255821 /* Info.plist */,
+			);
+			path = "Amazon S3 Hash TestTests";
+			sourceTree = "<group>";
+		};
+		D79E4EB4225AB6F200255821 /* Amazon S3 Hash TestUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D79E4EB5225AB6F200255821 /* Amazon_S3_Hash_TestUITests.swift */,
+				D79E4EB7225AB6F200255821 /* Info.plist */,
+			);
+			path = "Amazon S3 Hash TestUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D79E4E8E225AB6F100255821 /* Amazon S3 Hash Test */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D79E4EBA225AB6F200255821 /* Build configuration list for PBXNativeTarget "Amazon S3 Hash Test" */;
+			buildPhases = (
+				D79E4E8B225AB6F100255821 /* Sources */,
+				D79E4E8C225AB6F100255821 /* Frameworks */,
+				D79E4E8D225AB6F100255821 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Amazon S3 Hash Test";
+			productName = "Amazon S3 Hash Test";
+			productReference = D79E4E8F225AB6F100255821 /* Amazon S3 Hash Test.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D79E4EA5225AB6F200255821 /* Amazon S3 Hash TestTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D79E4EBD225AB6F200255821 /* Build configuration list for PBXNativeTarget "Amazon S3 Hash TestTests" */;
+			buildPhases = (
+				D79E4EA2225AB6F200255821 /* Sources */,
+				D79E4EA3225AB6F200255821 /* Frameworks */,
+				D79E4EA4225AB6F200255821 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D79E4EA8225AB6F200255821 /* PBXTargetDependency */,
+			);
+			name = "Amazon S3 Hash TestTests";
+			productName = "Amazon S3 Hash TestTests";
+			productReference = D79E4EA6225AB6F200255821 /* Amazon S3 Hash TestTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D79E4EB0225AB6F200255821 /* Amazon S3 Hash TestUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D79E4EC0225AB6F200255821 /* Build configuration list for PBXNativeTarget "Amazon S3 Hash TestUITests" */;
+			buildPhases = (
+				D79E4EAD225AB6F200255821 /* Sources */,
+				D79E4EAE225AB6F200255821 /* Frameworks */,
+				D79E4EAF225AB6F200255821 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D79E4EB3225AB6F200255821 /* PBXTargetDependency */,
+			);
+			name = "Amazon S3 Hash TestUITests";
+			productName = "Amazon S3 Hash TestUITests";
+			productReference = D79E4EB1225AB6F200255821 /* Amazon S3 Hash TestUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D79E4E87225AB6F100255821 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "Alfonso Maria Tesauro";
+				TargetAttributes = {
+					D79E4E8E225AB6F100255821 = {
+						CreatedOnToolsVersion = 10.2;
+					};
+					D79E4EA5225AB6F200255821 = {
+						CreatedOnToolsVersion = 10.2;
+						TestTargetID = D79E4E8E225AB6F100255821;
+					};
+					D79E4EB0225AB6F200255821 = {
+						CreatedOnToolsVersion = 10.2;
+						TestTargetID = D79E4E8E225AB6F100255821;
+					};
+				};
+			};
+			buildConfigurationList = D79E4E8A225AB6F100255821 /* Build configuration list for PBXProject "Amazon S3 Hash Test" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D79E4E86225AB6F100255821;
+			productRefGroup = D79E4E90225AB6F100255821 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D79E4E8E225AB6F100255821 /* Amazon S3 Hash Test */,
+				D79E4EA5225AB6F200255821 /* Amazon S3 Hash TestTests */,
+				D79E4EB0225AB6F200255821 /* Amazon S3 Hash TestUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D79E4E8D225AB6F100255821 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D79E4EA0225AB6F200255821 /* LaunchScreen.storyboard in Resources */,
+				D79E4E9D225AB6F200255821 /* Assets.xcassets in Resources */,
+				D79E4E98225AB6F100255821 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D79E4EA4225AB6F200255821 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D79E4EAF225AB6F200255821 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D79E4E8B225AB6F100255821 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D79E4E95225AB6F100255821 /* ViewController.swift in Sources */,
+				D79E4E9B225AB6F100255821 /* Amazon_S3_Hash_Test.xcdatamodeld in Sources */,
+				D79E4E93225AB6F100255821 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D79E4EA2225AB6F200255821 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D79E4EAB225AB6F200255821 /* Amazon_S3_Hash_TestTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D79E4EAD225AB6F200255821 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D79E4EB6225AB6F200255821 /* Amazon_S3_Hash_TestUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D79E4EA8225AB6F200255821 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D79E4E8E225AB6F100255821 /* Amazon S3 Hash Test */;
+			targetProxy = D79E4EA7225AB6F200255821 /* PBXContainerItemProxy */;
+		};
+		D79E4EB3225AB6F200255821 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D79E4E8E225AB6F100255821 /* Amazon S3 Hash Test */;
+			targetProxy = D79E4EB2225AB6F200255821 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D79E4E96225AB6F100255821 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D79E4E97225AB6F100255821 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D79E4E9E225AB6F200255821 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D79E4E9F225AB6F200255821 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D79E4EB8225AB6F200255821 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D79E4EB9225AB6F200255821 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D79E4EBB225AB6F200255821 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 65G6AG8SA4;
+				INFOPLIST_FILE = "Amazon S3 Hash Test/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alfonsotesauro.Amazon-S3-Hash-Test";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D79E4EBC225AB6F200255821 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 65G6AG8SA4;
+				INFOPLIST_FILE = "Amazon S3 Hash Test/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alfonsotesauro.Amazon-S3-Hash-Test";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D79E4EBE225AB6F200255821 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 65G6AG8SA4;
+				INFOPLIST_FILE = "Amazon S3 Hash TestTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alfonsotesauro.Amazon-S3-Hash-TestTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Amazon S3 Hash Test.app/Amazon S3 Hash Test";
+			};
+			name = Debug;
+		};
+		D79E4EBF225AB6F200255821 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 65G6AG8SA4;
+				INFOPLIST_FILE = "Amazon S3 Hash TestTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alfonsotesauro.Amazon-S3-Hash-TestTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Amazon S3 Hash Test.app/Amazon S3 Hash Test";
+			};
+			name = Release;
+		};
+		D79E4EC1225AB6F200255821 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 65G6AG8SA4;
+				INFOPLIST_FILE = "Amazon S3 Hash TestUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alfonsotesauro.Amazon-S3-Hash-TestUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Amazon S3 Hash Test";
+			};
+			name = Debug;
+		};
+		D79E4EC2225AB6F200255821 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 65G6AG8SA4;
+				INFOPLIST_FILE = "Amazon S3 Hash TestUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alfonsotesauro.Amazon-S3-Hash-TestUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Amazon S3 Hash Test";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D79E4E8A225AB6F100255821 /* Build configuration list for PBXProject "Amazon S3 Hash Test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D79E4EB8225AB6F200255821 /* Debug */,
+				D79E4EB9225AB6F200255821 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D79E4EBA225AB6F200255821 /* Build configuration list for PBXNativeTarget "Amazon S3 Hash Test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D79E4EBB225AB6F200255821 /* Debug */,
+				D79E4EBC225AB6F200255821 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D79E4EBD225AB6F200255821 /* Build configuration list for PBXNativeTarget "Amazon S3 Hash TestTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D79E4EBE225AB6F200255821 /* Debug */,
+				D79E4EBF225AB6F200255821 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D79E4EC0225AB6F200255821 /* Build configuration list for PBXNativeTarget "Amazon S3 Hash TestUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D79E4EC1225AB6F200255821 /* Debug */,
+				D79E4EC2225AB6F200255821 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D79E4E99225AB6F100255821 /* Amazon_S3_Hash_Test.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D79E4E9A225AB6F100255821 /* Amazon_S3_Hash_Test.xcdatamodel */,
+			);
+			currentVersion = D79E4E9A225AB6F100255821 /* Amazon_S3_Hash_Test.xcdatamodel */;
+			path = Amazon_S3_Hash_Test.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = D79E4E87225AB6F100255821 /* Project object */;
+}
