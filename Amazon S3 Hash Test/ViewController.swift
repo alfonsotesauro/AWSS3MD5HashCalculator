@@ -93,7 +93,8 @@ extension URL {
             
             let hasher = AWS3MD5Hash.init()
             let file = fopen(self.path, "r")
-
+            defer { let result = fclose(file)}
+            
             if numberOfParts == 0 {
                 let data = hasher.data(from: file!, startingOnByte: 0, length: fileSize, filePath: self.path)
                 let string = MD5.get(data: data)
@@ -142,13 +143,7 @@ extension URL {
             
             
             //let final2 = MD5.get(data :resultData)
-            
-            if final == result {
-                print("Ecco servito.")
-            }
-            
-            
-            
+          
             print("\(final)")
             
             return final
@@ -169,7 +164,7 @@ struct MD5 {
     static func get(data: Data) -> String {
         var digest = [UInt8](repeating: 0, count: Int(CC_MD5_DIGEST_LENGTH))
         
-        data.withUnsafeBytes { bytes in
+        let _ = data.withUnsafeBytes { bytes in
             CC_MD5(bytes, CC_LONG(data.count), &digest)
         }
         var digestHex = ""

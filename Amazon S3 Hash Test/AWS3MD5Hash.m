@@ -29,12 +29,8 @@
     [fileURL getResourceValue:&fileSizeValue
                        forKey:NSURLFileSizeKey
                         error:&fileSizeError];
-    if (fileSizeValue) {
-        NSLog(@"value for %@ is %@", fileURL, fileSizeValue);
-    }
-    else {
-        NSLog(@"error getting size for url %@ error was %@", fileURL, fileSizeError);
-    }
+  
+    
     
     NSInteger result = fseek(theFile,startByte,SEEK_SET);
     NSInteger result2 = fread(buffer, length, 1, theFile);
