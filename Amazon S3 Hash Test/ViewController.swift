@@ -15,42 +15,53 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+      let sampleMapURL = URL.init(fileURLWithPath: "/Volumes/Mac 4 Tera/Alleggerimento SSD/Map important Graham work/map-of-australia-scripts/Alfonso actual map preparation/builds/separated/AustraliaBasicWithPostalCodesandch-April-4-2019.ctm1")
+        
+        
+        let awsHash = sampleMapURL.calculateAWSS3MD5Hash()
+        
+        print("\(awsHash!)")
+        
+        
+    }
+
+}
+
+extension URL {
+    
+    func calculateAWSS3MD5Hash() -> String? {
+        
         let result = "f5738cd338c216edabb415031bb5ee93-76"
         
-        let calculatedMd5Data = URL.init(fileURLWithPath: "/Volumes/Mac 4 Tera/Alleggerimento SSD/Map important Graham work/map-of-australia-scripts/Alfonso actual map preparation/builds/separated/AustraliaBasicWithPostalCodesandch-April-4-2019.ctm1")
+        
         
         
         do {
             
-            var hashString = ""
-            let file = fopen(calculatedMd5Data.path, "r")
-            let destinationFile = fopen("/Users/fofo/Desktop/md5/checksums.txt","w")
+            let file = fopen(self.path, "r")
             
             let hasher = AWS3MD5Hash.init()
             var index: UInt64 = 0
             var bigString: String! = ""
-            var lastIteration = false
-            var remainingBytes = 0
             var data: Data!
-            var difference = 0
             
             while true {
-            
+                
                 if index == 75 {
                     print("Siamo all'ultima linea.")
                 }
                 
                 
-                    data = hasher.data(from: file!, startingOnByte: index * 16384 * 1024, length: 16 * 1024 * 1024, filePath: calculatedMd5Data.path)
+                data = hasher.data(from: file!, startingOnByte: index * 16384 * 1024, length: 16 * 1024 * 1024, filePath: self.path)
                 
                 
                 
-           
                 
                 
-            bigString = bigString + MD5.get(data: data) + "\n"
-
-            index += 1
+                
+                bigString = bigString + MD5.get(data: data) + "\n"
+                
+                index += 1
                 
                 if index == 76 {
                     break
@@ -78,16 +89,18 @@ class ViewController: UIViewController {
             
             
             print("\(final2)-76")
+            
+            return final
+            
         } catch {
             
         }
         
-        
-        
-        
-        
+        return nil
     }
-
+    
+    
+    
 }
 
 struct MD5 {
