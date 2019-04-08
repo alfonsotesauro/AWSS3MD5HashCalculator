@@ -38,6 +38,17 @@ class ViewController: UIViewController {
             print("Funziona anche senza parti quando il file è piccolo.")
         }
         
+         let sampleMapURL4 = URL.init(fileURLWithPath: "/Users/fofo/Desktop/test-image.png")
+        
+        let newResultWithNoParts2 = "44fcf6535ca4c0d53716ce405a1d19b5"
+        
+        let awsHash5 = sampleMapURL4.calculateAWSS3MD5Hash(0)
+        
+        if newResultWithNoParts2 == awsHash5 {
+            print("Funziona anche senza parti quando il file è piccolo.")
+        }
+
+
         
         
     }
@@ -48,9 +59,9 @@ extension URL {
     
     func calculateAWSS3MD5Hash(_ numberOfParts: UInt64) -> String? {
         
-        let result = "f5738cd338c216edabb415031bb5ee93-76"
+        //let result = "f5738cd338c216edabb415031bb5ee93-76"
         
-        let thirdKeyResult = "59b574930d739ce204217786f96ddb7b-64"
+       // let thirdKeyResult = "59b574930d739ce204217786f96ddb7b-64"
         
         
         
@@ -75,7 +86,7 @@ extension URL {
                         purposedPartSize += 1
                     }
                     
-                    print(purposedPartSize)
+                    print("\(purposedPartSize!)")
                 }
                 
             }
