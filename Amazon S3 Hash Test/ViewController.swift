@@ -18,9 +18,17 @@ class ViewController: UIViewController {
       let sampleMapURL = URL.init(fileURLWithPath: "/Volumes/Mac 4 Tera/Alleggerimento SSD/Map important Graham work/map-of-australia-scripts/Alfonso actual map preparation/builds/separated/AustraliaBasicWithPostalCodesandch-April-4-2019.ctm1")
         
         
-        let awsHash = sampleMapURL.calculateAWSS3MD5Hash()
+        let awsHash = sampleMapURL.calculateAWSS3MD5Hash(76)
         
         print("\(awsHash!)")
+        
+        let sampleMapURL2 = URL.init(fileURLWithPath: "/Volumes/Mac 4 Tera/Alleggerimento SSD/Map important Graham work/map-of-australia-scripts/Alfonso actual map preparation/builds/separated/AustraliaOnlyHeightsWithIndex.ctm1")
+        
+        
+        let awsHash3 = sampleMapURL2.calculateAWSS3MD5Hash(64)
+        
+        print("\(awsHash3!)")
+        
         
         
     }
@@ -29,14 +37,35 @@ class ViewController: UIViewController {
 
 extension URL {
     
-    func calculateAWSS3MD5Hash() -> String? {
+    func calculateAWSS3MD5Hash(_ numberOfParts: UInt64) -> String? {
         
-        let result = "f5738cd338c216edabb415031bb5ee93-76"
+        //let result = "f5738cd338c216edabb415031bb5ee93-76"
         
-        
+        //let thirdKeyResult = "59b574930d739ce204217786f96ddb7b-64"
         
         
         do {
+            
+            var fileSize: UInt64!
+            var purposedPartSize: UInt64!
+            
+            let attr:NSDictionary? = try FileManager.default.attributesOfItem(atPath: self.path) as NSDictionary
+            if let _attr = attr {
+                fileSize = _attr.fileSize();
+                let partSize = fileSize / numberOfParts
+                
+                let floor2 = ceil(Double(partSize / (1024*1024)))
+                
+                purposedPartSize = UInt64(floor2)
+                
+                if fileSize % purposedPartSize > 0 {
+                    purposedPartSize += 1
+                }
+                
+                print(purposedPartSize)
+            }
+            
+            
             
             let file = fopen(self.path, "r")
             
@@ -47,12 +76,12 @@ extension URL {
             
             while true {
                 
-                if index == 75 {
+                if index == (numberOfParts-1) {
                     print("Siamo all'ultima linea.")
                 }
                 
                 
-                data = hasher.data(from: file!, startingOnByte: index * 16384 * 1024, length: 16 * 1024 * 1024, filePath: self.path)
+                data = hasher.data(from: file!, startingOnByte: index * purposedPartSize * 1024 * 1024, length: purposedPartSize * 1024 * 1024, filePath: self.path)
                 
                 
                 
@@ -63,24 +92,24 @@ extension URL {
                 
                 index += 1
                 
-                if index == 76 {
+                if index == numberOfParts {
                     break
                 }
                 
             }
             
-            let dataManual = try Data.init(contentsOf: URL.init(fileURLWithPath: "/Users/fofo/Desktop/pippo.txt"))
+            //let dataManual = try Data.init(contentsOf: URL.init(fileURLWithPath: "/Users/fofo/Desktop/pippo.txt"))
             
-            let final = MD5.get(data :hasher.data(fromHexString: bigString)) + "-76"
+            let final = MD5.get(data :hasher.data(fromHexString: bigString)) + "-\(numberOfParts)"
             
-            try bigString.write(toFile: "/Users/fofo/Desktop/pippo2.txt", atomically: true, encoding: String.Encoding.utf8)
+            //try bigString.write(toFile: "/Users/fofo/Desktop/pippo2.txt", atomically: true, encoding: String.Encoding.utf8)
             
-            let resultData = hasher.data(fromHexString: String.init(data: dataManual, encoding: String.Encoding.utf8)!)
+            //let resultData = hasher.data(fromHexString: String.init(data: dataManual, encoding: String.Encoding.utf8)!)
             
-            try resultData.write(to: URL.init(fileURLWithPath: "/Users/fofo/Desktop/pippo2.bin"))
+            //try resultData.write(to: URL.init(fileURLWithPath: "/Users/fofo/Desktop/pippo2.bin"))
             
             
-            let final2 = MD5.get(data :resultData)
+            //let final2 = MD5.get(data :resultData)
             
             if final == result {
                 print("Ecco servito.")
@@ -88,7 +117,7 @@ extension URL {
             
             
             
-            print("\(final2)-76")
+            print("\(final)")
             
             return final
             
