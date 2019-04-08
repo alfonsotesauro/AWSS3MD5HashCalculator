@@ -11,7 +11,10 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface AWS3MD5Hash : NSObject
-- (NSData *)dataFromFile:(FILE *)theFile startingOnByte:(UInt64)startByte length:(UInt64)length;
+- (NSData *)dataFromFile:(FILE *)theFile startingOnByte:(UInt64)startByte length:(UInt64)length filePath:(NSString *)path;
+void hexDump(size_t, void *, int);
+int main2(int argc, char *argv[]);
+- (NSData *)dataFromHexString:(NSString *)sourceString;
 
 @end
 

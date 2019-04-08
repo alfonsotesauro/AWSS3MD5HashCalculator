@@ -29,12 +29,26 @@ class ViewController: UIViewController {
             let hasher = AWS3MD5Hash.init()
             var index: UInt64 = 0
             var bigString: String! = ""
+            var lastIteration = false
+            var remainingBytes = 0
+            var data: Data!
+            var difference = 0
             
             while true {
             
-            let data = hasher.data(from: file!, startingOnByte: index * 16384, length: 16 * 1024)
-            
-            bigString = bigString + MD5.get(data: data)
+                if index == 75 {
+                    print("Siamo all'ultima linea.")
+                }
+                
+                
+                    data = hasher.data(from: file!, startingOnByte: index * 16384 * 1024, length: 16 * 1024 * 1024, filePath: calculatedMd5Data.path)
+                
+                
+                
+           
+                
+                
+            bigString = bigString + MD5.get(data: data) + "\n"
 
             index += 1
                 
@@ -44,9 +58,26 @@ class ViewController: UIViewController {
                 
             }
             
-            let final = MD5.get(data :bigString.data(using: String.Encoding.utf8)!)
+            let dataManual = try Data.init(contentsOf: URL.init(fileURLWithPath: "/Users/fofo/Desktop/pippo.txt"))
             
-            print("\(final)-76")
+            let final = MD5.get(data :hasher.data(fromHexString: bigString)) + "-76"
+            
+            try bigString.write(toFile: "/Users/fofo/Desktop/pippo2.txt", atomically: true, encoding: String.Encoding.utf8)
+            
+            let resultData = hasher.data(fromHexString: String.init(data: dataManual, encoding: String.Encoding.utf8)!)
+            
+            try resultData.write(to: URL.init(fileURLWithPath: "/Users/fofo/Desktop/pippo2.bin"))
+            
+            
+            let final2 = MD5.get(data :resultData)
+            
+            if final == result {
+                print("Ecco servito.")
+            }
+            
+            
+            
+            print("\(final2)-76")
         } catch {
             
         }
@@ -56,7 +87,6 @@ class ViewController: UIViewController {
         
         
     }
-
 
 }
 
