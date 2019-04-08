@@ -15,6 +15,7 @@
 		D79E4EA0225AB6F200255821 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D79E4E9E225AB6F200255821 /* LaunchScreen.storyboard */; };
 		D79E4EAB225AB6F200255821 /* Amazon_S3_Hash_TestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79E4EAA225AB6F200255821 /* Amazon_S3_Hash_TestTests.swift */; };
 		D79E4EB6225AB6F200255821 /* Amazon_S3_Hash_TestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79E4EB5225AB6F200255821 /* Amazon_S3_Hash_TestUITests.swift */; };
+		D79E4EC6225ABB4A00255821 /* AWS3MD5Hash.m in Sources */ = {isa = PBXBuildFile; fileRef = D79E4EC5225ABB4A00255821 /* AWS3MD5Hash.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,9 @@
 		D79E4EB1225AB6F200255821 /* Amazon S3 Hash TestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Amazon S3 Hash TestUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D79E4EB5225AB6F200255821 /* Amazon_S3_Hash_TestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Amazon_S3_Hash_TestUITests.swift; sourceTree = "<group>"; };
 		D79E4EB7225AB6F200255821 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D79E4EC3225ABB4900255821 /* Amazon S3 Hash Test-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Amazon S3 Hash Test-Bridging-Header.h"; sourceTree = "<group>"; };
+		D79E4EC4225ABB4A00255821 /* AWS3MD5Hash.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AWS3MD5Hash.h; sourceTree = "<group>"; };
+		D79E4EC5225ABB4A00255821 /* AWS3MD5Hash.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AWS3MD5Hash.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,11 +105,14 @@
 			children = (
 				D79E4E92225AB6F100255821 /* AppDelegate.swift */,
 				D79E4E94225AB6F100255821 /* ViewController.swift */,
+				D79E4EC4225ABB4A00255821 /* AWS3MD5Hash.h */,
+				D79E4EC5225ABB4A00255821 /* AWS3MD5Hash.m */,
 				D79E4E96225AB6F100255821 /* Main.storyboard */,
 				D79E4E9C225AB6F200255821 /* Assets.xcassets */,
 				D79E4E9E225AB6F200255821 /* LaunchScreen.storyboard */,
 				D79E4EA1225AB6F200255821 /* Info.plist */,
 				D79E4E99225AB6F100255821 /* Amazon_S3_Hash_Test.xcdatamodeld */,
+				D79E4EC3225ABB4900255821 /* Amazon S3 Hash Test-Bridging-Header.h */,
 			);
 			path = "Amazon S3 Hash Test";
 			sourceTree = "<group>";
@@ -196,6 +203,7 @@
 				TargetAttributes = {
 					D79E4E8E225AB6F100255821 = {
 						CreatedOnToolsVersion = 10.2;
+						LastSwiftMigration = 1020;
 					};
 					D79E4EA5225AB6F200255821 = {
 						CreatedOnToolsVersion = 10.2;
@@ -259,6 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D79E4EC6225ABB4A00255821 /* AWS3MD5Hash.m in Sources */,
 				D79E4E95225AB6F100255821 /* ViewController.swift in Sources */,
 				D79E4E9B225AB6F100255821 /* Amazon_S3_Hash_Test.xcdatamodeld in Sources */,
 				D79E4E93225AB6F100255821 /* AppDelegate.swift in Sources */,
@@ -436,6 +445,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 65G6AG8SA4;
 				INFOPLIST_FILE = "Amazon S3 Hash Test/Info.plist";
@@ -445,6 +455,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.alfonsotesauro.Amazon-S3-Hash-Test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Amazon S3 Hash Test/Amazon S3 Hash Test-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -454,6 +466,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 65G6AG8SA4;
 				INFOPLIST_FILE = "Amazon S3 Hash Test/Info.plist";
@@ -463,6 +476,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.alfonsotesauro.Amazon-S3-Hash-Test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Amazon S3 Hash Test/Amazon S3 Hash Test-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
