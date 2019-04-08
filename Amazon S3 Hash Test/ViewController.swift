@@ -39,9 +39,9 @@ extension URL {
     
     func calculateAWSS3MD5Hash(_ numberOfParts: UInt64) -> String? {
         
-        //let result = "f5738cd338c216edabb415031bb5ee93-76"
+        let result = "f5738cd338c216edabb415031bb5ee93-76"
         
-        //let thirdKeyResult = "59b574930d739ce204217786f96ddb7b-64"
+        let thirdKeyResult = "59b574930d739ce204217786f96ddb7b-64"
         
         
         do {
