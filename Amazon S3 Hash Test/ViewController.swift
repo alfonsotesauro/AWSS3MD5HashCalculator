@@ -15,42 +15,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-      let sampleMapURL = URL.init(fileURLWithPath: "/Volumes/Mac 4 Tera/Alleggerimento SSD/Map important Graham work/map-of-australia-scripts/Alfonso actual map preparation/builds/separated/AustraliaBasicWithPostalCodesandch-April-4-2019.ctm1")
-        
-        
-        //let awsHash = sampleMapURL.calculateAWSS3MD5Hash(76)
-        
-        //print("\(awsHash!)")
-        
-        let sampleMapURL2 = URL.init(fileURLWithPath: "/Volumes/Mac 4 Tera/Alleggerimento SSD/Map important Graham work/map-of-australia-scripts/Alfonso actual map preparation/builds/separated/AustraliaOnlyHeightsWithIndex.ctm1")
-        
-        
-       //let awsHash3 = sampleMapURL2.calculateAWSS3MD5Hash(64)
-        
-        //print("\(awsHash3!)")
-        
-        let sampleMapURL3 = URL.init(fileURLWithPath: "/Users/fofo/Downloads/AustraliaBasicWithPostalCodesandch.ctm1")
-        
-        let newResultWithNoParts = "362b3706d3df0086d0bf91fb8ca1503d"
-        let awsHash4 = sampleMapURL3.calculateAWSS3MD5Hash(0)
-        
-        if newResultWithNoParts == awsHash4 {
-            print("Funziona anche senza parti quando il file è piccolo.")
-        }
-        
-         let sampleMapURL4 = URL.init(fileURLWithPath: "/Users/fofo/Desktop/test-image.png")
-        
-        let newResultWithNoParts2 = "44fcf6535ca4c0d53716ce405a1d19b5"
-        
-        let awsHash5 = sampleMapURL4.calculateAWSS3MD5Hash(0)
-        
-        if newResultWithNoParts2 == awsHash5 {
-            print("Funziona anche senza parti quando il file è piccolo.")
-        }
+         let sampleFileUrl = URL.init(fileURLWithPath: "/Applications/test/test.bin")
 
-
+         let awsHash = sampleFileUrl.calculateAWSS3MD5Hash(50)
         
-        
+         print("\(awsHash!)")
     }
 
 }
@@ -59,17 +28,10 @@ extension URL {
     
     func calculateAWSS3MD5Hash(_ numberOfParts: UInt64) -> String? {
         
-        //let result = "f5738cd338c216edabb415031bb5ee93-76"
-        
-       // let thirdKeyResult = "59b574930d739ce204217786f96ddb7b-64"
-        
-        
-        
-        
         do {
             
             var fileSize: UInt64!
-            var purposedPartSize: UInt64!
+            var calculatedPartSize: UInt64!
             
             let attr:NSDictionary? = try FileManager.default.attributesOfItem(atPath: self.path) as NSDictionary
             if let _attr = attr {
@@ -78,18 +40,35 @@ extension URL {
                     
                     let partSize = fileSize / numberOfParts
                     
-                    let floor2 = ceil(Double(partSize / (1024*1024)))
+                    let temp = Double(partSize / (1024*1024))
                     
-                    purposedPartSize = UInt64(floor2)
+                    calculatedPartSize = UInt64(temp)
                     
-                    if fileSize % purposedPartSize > 0 {
-                        purposedPartSize += 1
+                    var calculatedPartSizeInBytes = calculatedPartSize * 1024 * 1024
+                    
+                    if fileSize - (calculatedPartSizeInBytes * numberOfParts) > calculatedPartSizeInBytes {
+                        calculatedPartSize += 1
+                    }
+                    calculatedPartSizeInBytes = calculatedPartSize * 1024 * 1024
+                    
+                    let abstractLength = calculatedPartSizeInBytes * numberOfParts
+                    
+                    if fileSize > abstractLength {
+                        
+                        if (fileSize - abstractLength) > calculatedPartSizeInBytes {
+                            calculatedPartSize += 1
+                        }
+                        
                     }
                     
-                    print("\(purposedPartSize!)")
-                }
-                
+                    
+                    }
+                    print("The calculated part size is \(calculatedPartSize!) Megabytes")
+                    
+                    
             }
+                
+            
             
             let hasher = AWS3MD5Hash.init()
             let file = fopen(self.path, "r")
@@ -107,28 +86,17 @@ extension URL {
             var bigString: String! = ""
             var data: Data!
             
-            while true {
+            while index != numberOfParts {
                 
-                if index == (numberOfParts-1) {
-                    print("Siamo all'ultima linea.")
-                }
+                autoreleasepool {
                 
-                
-                data = hasher.data(from: file!, startingOnByte: index * purposedPartSize * 1024 * 1024, length: purposedPartSize * 1024 * 1024, filePath: self.path)
-                
-                
-                
-                
-                
-                
+                data = hasher.data(from: file!, startingOnByte: index * calculatedPartSize * 1024 * 1024, length: calculatedPartSize * 1024 * 1024, filePath: self.path)
+        
                 bigString = bigString + MD5.get(data: data) + "\n"
                 
                 index += 1
                 
-                if index == numberOfParts {
-                    break
                 }
-                
             }
             
             //let dataManual = try Data.init(contentsOf: URL.init(fileURLWithPath: "/Users/fofo/Desktop/pippo.txt"))
